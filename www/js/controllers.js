@@ -10,7 +10,7 @@ angular.module('pad')
     if (!window.cordova) //cordova is not defined in the browser
       return $scope.reset();
 
-    $cordovaFile.writeFile(cordova.file.externalDataDirectory,'signature.svg', signaturePad.toDataURL(), { 'append':false } ).then(function (x) {
+    $cordovaFile.writeFile(cordova.file.externalDataDirectory,'signaturePad.png_dataURL', signaturePad.toDataURL(), { 'append':false } ).then(function (x) {
       console.log('Save successful', x);
     }, function (y) {
       console.log('Error during save', y);
