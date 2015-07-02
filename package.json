@@ -1,0 +1,14 @@
+{
+  "name": "pad",
+  "version": "1.0.0",
+  "description": "pad: signaturePad in ionic",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "bower": "^1.3.3",
+  },
+  "cordovaPlugins": [],
+  "cordovaPlatforms": [
+    "android"
+  ]
+}
