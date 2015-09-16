@@ -14,7 +14,8 @@ angular.module('pad')
       console.log('Save successful', x);
     }, function (y) {
       console.log('Error during save', y);
-    }).then($scope.reset);
+    });
+    //.then($scope.reset);
   };
 
 
