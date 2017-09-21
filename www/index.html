@@ -50,8 +50,8 @@ flex-grow: 1;
       <canvas id="canvas">my canvas</canvas>
     </div>
     <div class="col flxCont">
-      <button class="button" ng-class="{false: 'button-light'}[saveDone]" ng-click="reset()">Reset</button>
-        <button class="button" ng-class="{ true: 'button-balanced',false: 'button-positive'}[saveDone]"  ng-click="save()" ng-disabled="saveDone">Save</button>
+      <button class="button" ng-class="{false: 'button-assertive'}[saveDone]" ng-click="reset()">Effacer</button>
+      <button class="button" ng-class="{ true: 'button-positive', false: 'button-balanced'}[saveDone]"  ng-click="save()" ng-disabled="saveDone">Enregistrer</button>
     </div>
   </div>
   </body>

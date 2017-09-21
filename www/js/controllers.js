@@ -1,27 +1,30 @@
 angular.module('pad')
-.controller('ctrl', ['$scope', '$cordovaFile', function($scope, $cordovaFile) {
+.controller('ctrl', ['$scope', '$cordovaFile','$ionicLoading', function($scope, $cordovaFile, $ionicLoading) {
   $scope.saveDone = false;
   var canvas = document.querySelector('canvas');
   var signaturePad = new SignaturePad(canvas);
 
   $scope.save = function () {
     lockPad();
+    $ionicLoading.show({template:'Patientez'});
 
     if (!window.cordova) //cordova is not defined in the browser
+    {
       return $scope.reset();
-
+    }
     $cordovaFile.writeFile(cordova.file.externalDataDirectory,'signaturePad.png_dataURL', signaturePad.toDataURL(), { 'append':false } ).then(function (x) {
       console.log('Save successful', x);
     }, function (y) {
       console.log('Error during save', y);
-    });
-    //.then($scope.reset);
+    })
+    .then($scope.reset);
   };
 
 
   $scope.reset = function() {
     signaturePad.clear();
     unlockPad();
+    $ionicLoading.hide();
   };
 
   function lockPad() {

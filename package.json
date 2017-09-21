@@ -9,6 +9,6 @@
   },
   "cordovaPlugins": [],
   "cordovaPlatforms": [
-    "android"
+    "android@4.4.2"
   ]
 }
